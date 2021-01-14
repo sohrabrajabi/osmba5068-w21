@@ -4,6 +4,8 @@ from vacuumenvironment import ACTION_SUCK
 from vacuumenvironment import ACTION_NOP, ACTION_STOP
 
 DIRT_REWARD = 10
+PENALIZE_DEPLETED_BATTERY = False
+DEPLETED_BATTERY_PENALTY = 200
 
 # Print a log message after this many iterations; None for no report
 REPORT_INTERVAL = 100
@@ -52,6 +54,8 @@ class VacuumAgent(Agent):
     
     def post_update(self, action):
         self.battery_level -= BATTERY_CONSUMPTION[action]
+        if self.battery_depleted() and PENALIZE_DEPLETED_BATTERY:
+            self._score -= DEPLETED_BATTERY_PENALTY
         self.action_count += 1
  
     def add_dirt_reward(self):

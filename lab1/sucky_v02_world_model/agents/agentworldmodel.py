@@ -40,6 +40,9 @@ class AgentWorldModel:
     def ask_state_here(self):
         return self.ask_state_at(self.current_location)
     
+    def ask_at_home(self):
+        return self.current_location == (1,1)
+    
     def ask_state_at(self, location):
         return self.squares[location[0]][location[1]]
     

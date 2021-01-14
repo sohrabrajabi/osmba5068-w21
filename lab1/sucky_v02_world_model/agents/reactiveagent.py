@@ -1,6 +1,6 @@
 from agents.vacuumagent import VacuumAgent
-from vacuumenvironment import ACTION_STOP
-from vacuumenvironment import ACTION_TURN_LEFT, ACTION_TURN_RIGHT, ACTION_FORWARD, ACTION_SUCK
+from constants import ACTION_STOP
+from constants import ACTION_TURN_LEFT, ACTION_TURN_RIGHT, ACTION_FORWARD, ACTION_SUCK
 from random import choice
 
 class NoSenseAgent(VacuumAgent):
