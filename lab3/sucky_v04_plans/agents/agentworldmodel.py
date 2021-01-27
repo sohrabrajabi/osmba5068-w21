@@ -46,8 +46,8 @@ class AgentWorldModel:
             self.num_gold -= 1
         r,c = self.current_location
         if dirt:
-            self.squares[r][c] = DIRT 
-        if self.squares[r][c] == UNKNOWN and not dirt:
+            self.squares[r][c] = DIRT
+        elif self.squares[r][c] in [UNKNOWN, DIRT]:
             self.squares[r][c] = CLEAN
  
     def tell_action(self, action):
@@ -69,8 +69,14 @@ class AgentWorldModel:
     def ask_state_in_direction(self, direction):
         return self.ask_state_at(self.square_in_direction(direction))
     
+    def ask_state_at_heading(self, heading):
+        return self.ask_state_at(square_at_heading(self.current_location, heading))
+    
     def ask_current_location(self):
         return self.current_location
+    
+    def ask_current_heading(self):
+        return self.heading
     
     def ask_num_gold(self):
         return self.num_gold

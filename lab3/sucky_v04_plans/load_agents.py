@@ -8,6 +8,7 @@ AGENTS = [ ("agents/reactiveagent.py",  "NoSenseAgent"),
            ("agents/worldmodelagent.py",  "WorldModelAgent"),
            ("agents/macroactionagent.py",  "MacroActionAgent"),
            ("agents/planningagent.py",  "PlanningAgent"),
+           ("agents/gohomeagent.py", "GoHomeAgent")
          ]
 
 ####  DO NOT EDIT BELOW THIS LINE #########
